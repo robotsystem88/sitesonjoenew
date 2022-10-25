@@ -1,0 +1,56 @@
+.footer{
+    border-top: 2px solid #ababab;/*верхня лінія*/
+    margin-top: -2px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+}
+.footer__right{
+    text-align: right;/*тег р рядковий еелмент і тому працює text-align: right*/
+}
+.footer p{
+    font-size: 13px;
+    color: rgb(97, 97, 97);
+    line-height: 1.2;
+    margin: 25px 0;
+}
+.footer__memu{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, auto));
+    margin: 25px 0;
+    list-style: none;
+    justify-content: start;
+}
+.footer__memu a{
+    font-size: 13px;
+    color: rgb(97, 97, 97);
+    line-height: 1.2;
+    text-decoration: none;
+    font-weight: 700;
+}
+.footer__memu a:hover{
+    text-decoration: underline;
+}
+.footer__memu li{
+    border-right: 1px solid rgb(97, 97, 97);
+    padding: 0 8px;
+}
+.footer__memu li:first-child{
+    padding-left: 0;
+}
+.footer__memu li:last-child{
+    border-right: none;
+}
+
+/* !!!adaptation for mobile devices!!! */
+@media (max-width: 680px){
+    .footer{
+        grid-template-columns: auto;
+    }
+    .footer__memu{
+        justify-content: stretch;
+    }
+    .footer__left, .footer__right{
+        text-align: center;
+    }
+}

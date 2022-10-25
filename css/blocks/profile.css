@@ -1,0 +1,67 @@
+.profile{
+    display: grid;
+    grid-template-columns: 135px 1fr;/*створення двох колонок розмірами (135px 1fr)*/
+    grid-column-gap: 20px;
+    align-items: center;/*align-items - вирівнювання по вертикалі*/
+}
+
+.profile__img a{
+    display: block;
+    border-radius: 5px;
+    box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.3);
+}
+.profile__img a img{
+    display: block;
+    padding: 5px;
+    max-width: 100%;
+    box-sizing: border-box;/*border-box вказує браузеру враховувати будь-яку рамку та відступ у значеннях, які ви вказуєте для ширини та 
+    висоти елемента, і елемент не виходить за межі блоку!!!*/
+}
+.profile__info p{
+    margin: 12px 0;
+}
+.profile__name{
+    font-size: 20px;
+    text-transform: uppercase;/*великі прописні букви*/
+    line-height: 1.2;
+    color: rgb(64, 64, 64);
+    font-weight: 900;
+}
+.profile__description{
+    font-size: 13px;
+    color: rgb(127, 127, 127);
+    line-height: 1.2;
+    max-width: 420px;
+}
+.profile__btns{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, auto));/*при auto-fit (якщо мало елементів) НЕ створюються додаткові колонки і розтягуються по ширині*/
+    justify-content: start;/*контент прижимаються до початку сітки*/
+}
+.profile__btns button{
+    font-size: 15px;
+    color: rgb(202, 0, 81);
+    line-height: 1.2;
+    border: 1px solid rgb(212, 212, 212);
+    background-color: rgb(245, 245, 245);
+    padding: 10px 0;
+    cursor: pointer;
+    margin-left: -1px;/*зміщення елементів (btn) вліво, щоб перекрити сусідні рамки кнопок*/
+}
+
+/* !!!adaptation for mobile devices!!! */
+@media (max-width: 480px){
+    .profile__img{
+        grid-column: 1 / -1;
+        justify-self: center;/*justify-self встановлює спосіб вирівнювання поля всередині його контейнера вирівнювання вздовж відповідної осі.*/
+    }
+    .profile__info{
+        grid-column: 1 / -1;
+    }
+}
+@media (max-width: 450px){
+    .profile__btns{
+        grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+        justify-content: stretch;
+    }
+}
